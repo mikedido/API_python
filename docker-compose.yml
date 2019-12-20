@@ -4,6 +4,7 @@ services:
   web:
     build:
       context : ./docker/web
+    entrypoint: '/start-reload.sh'
     volumes:
       - .:/app:rw
     ports:
