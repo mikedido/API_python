@@ -1,12 +1,20 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-app = FastAPI(title="Test API", openapi_url="/api/v1/openapi.json")
+from typing import List
+
+app = FastAPI(
+    title="Aviation API", 
+    description="This is a very fancy project, with auto docs for the API and everything",
+    version="1.0.0",
+    openapi_url="/api/v1/openapi.json"
+)
 
 class Item(BaseModel):
     name: str
     price: float
     is_offer: bool = None
+
 
 @app.get("/", tags=["login"])
 def read_root():
