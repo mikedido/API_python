@@ -9,6 +9,8 @@ services:
       - .:/app:rw
     ports:
       - '5000:80'
+    links:
+      - db
   db:
     image: mysql:5.7
     environment:

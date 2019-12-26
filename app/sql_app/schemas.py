@@ -2,6 +2,11 @@ from typing import List
 from pydantic import BaseModel
 
 
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: bool = None
+
 class ItemBase(BaseModel):
     title: str
     description: str = None
